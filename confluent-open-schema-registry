@@ -1,0 +1,7 @@
+docker run -d \
+  -p 8081:8081 \
+  --name schema-registry \
+  -e SCHEMA_REGISTRY_KAFKASTORE_BOOTSTRAP_SERVERS=PLAINTEXT://<msk-bootstrap>:9092 \
+  -e SCHEMA_REGISTRY_HOST_NAME=localhost \
+  -e SCHEMA_REGISTRY_LISTENERS=http://0.0.0.0:8081 \
+  confluentinc/cp-schema-registry:7.6.0
